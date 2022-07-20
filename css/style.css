@@ -8,9 +8,14 @@ body,button{
     margin: 0;
     padding: 0;
 }
-
+:root{
+    --mainColor: #149E05;
+    --secondColor: #EB6107;
+    --thirdColor: #9E470D;
+}
 .container__inner {
-    border: 2px solid black;
+    /* border: 2px solid black;
+    border-radius: 10px; */
     max-width: 600px;
     margin: 0 auto;
 }
@@ -22,6 +27,7 @@ body,button{
    
 }
 .clock-alarm__clocks {
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -30,9 +36,15 @@ body,button{
     width: 120px;
     height: 120px;
     margin: 20px 0;
+    
+    background: radial-gradient(circle, #eb6107, #d75b09, #c4540a, #b14e0c, #9e470d);
+
 }
 .clock-alarm__time{
     font-size: 30px;
+    border: 2px solid black;
+    border-radius: 5px;
+    
     
 }
 
@@ -47,9 +59,25 @@ body,button{
     border-radius: 5px;
     margin-bottom: 10px;
 }
+.clock-alarm__time-set:hover,.clock-alarm__list-remove-item:hover{
+    background-color: var(--secondColor);
+}
 .clock-alarm__list {
-    border: 2px solid black;
+    border: 2px solid var(--secondColor);
     border-radius: 20px;
-    width: 400px;
+    width: 350px;
     min-height: 450px;
+    background-color: var(--mainColor);
+}
+.clock-alarm__list-item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    margin: 10px 0;
+}
+.clock-alarm__list-remove-item{
+    padding: 12px 15px;
+    border-radius: 50%;
+    margin-left: 10px;
 }
