@@ -29,3 +29,19 @@ document.addEventListener("click",function(e){
     localStorage.setItem("timers",JSON.stringify(timers))  
     target.parentNode.remove()
 })
+setInterval(() => {
+    let currentTime = new Date()
+    let hours = currentTime.getHours()
+    let minutes = currentTime.getMinutes()
+    let str = hours + ":" +minutes
+    for(let item of timers){
+        if(item == str){
+            alert(`ALARM: ${str}`)
+            let allBtns = Array.from(document.querySelectorAll(".clock-alarm__list-remove-item"))
+            let index = timers.indexOf(item)
+            timers.splice(index,1)
+            localStorage.setItem("timers",JSON.stringify(timers))
+            allBtns[index].parentNode.remove()
+        }
+    }
+}, 1000);
