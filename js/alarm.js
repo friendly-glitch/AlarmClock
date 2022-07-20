@@ -33,6 +33,7 @@ setInterval(() => {
     let currentTime = new Date()
     let hours = currentTime.getHours()
     let minutes = currentTime.getMinutes()
+    if(minutes < 10) minutes = '0' + minutes
     let str = hours + ":" +minutes
     for(let item of timers){
         if(item == str){
